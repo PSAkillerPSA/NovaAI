@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "NovaAI"
+version = "0.1.0"
+description = "NovaAI - NovaV1 local AI model"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
