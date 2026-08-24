@@ -1,3 +1,3 @@
-from .model import get_model_path
+from .model import NovaAI, get_model_path
 
-__all__ = ["get_model_path"]
+__all__ = ["NovaAI", "get_model_path"]
