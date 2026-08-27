@@ -64,4 +64,4 @@ NovaAI is currently under development.
 
 ## License
 
-See the `LICENSE` file for license information.
+NovaAI is placed under the MIT license. See license.txt for more details.
