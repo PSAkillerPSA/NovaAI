@@ -40,7 +40,6 @@ def download_model():
 
                     if total_size:
                         percent = downloaded / total_size * 100
-
                         sys.stdout.write(
                             f"\rDownloading NovaV1: {percent:.1f}%"
                         )
@@ -66,7 +65,7 @@ def get_model_path():
 
 
 class NovaAI:
-    """NovaAI interface for the NovaV1 model."""
+    """Interface for the NovaV1 model."""
 
     def __init__(
         self,
@@ -90,12 +89,7 @@ class NovaAI:
 
         print("NovaV1 loaded!")
 
-    def ask(
-        self,
-        prompt,
-        max_tokens=None,
-        temperature=None,
-    ):
+    def ask(self, prompt, max_tokens=None, temperature=None):
         """Send a prompt to NovaV1 and return its response."""
 
         if max_tokens is None:
