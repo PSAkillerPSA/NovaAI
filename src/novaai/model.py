@@ -40,6 +40,7 @@ def download_model():
 
                     if total_size:
                         percent = downloaded / total_size * 100
+
                         sys.stdout.write(
                             f"\rDownloading NovaV1: {percent:.1f}%"
                         )
@@ -107,6 +108,7 @@ class NovaAI:
             ],
             max_tokens=max_tokens,
             temperature=temperature,
+            stop=["<|im_end|>"],
         )
 
         return response["choices"][0]["message"]["content"].strip()
