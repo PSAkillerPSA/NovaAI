@@ -90,7 +90,7 @@ class NovaAI:
         print("NovaV1 loaded!")
 
     def ask(self, prompt, max_tokens=None, temperature=None):
-        """Send a prompt to NovaV1 and return its response."""
+        """Send a message to NovaV1 and return its response."""
 
         if max_tokens is None:
             max_tokens = self.max_tokens
@@ -98,10 +98,15 @@ class NovaAI:
         if temperature is None:
             temperature = self.temperature
 
-        response = self.model(
-            prompt,
+        response = self.model.create_chat_completion(
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt,
+                }
+            ],
             max_tokens=max_tokens,
             temperature=temperature,
         )
 
-        return response["choices"][0]["text"].strip()
+        return response["choices"][0]["message"]["content"].strip()
